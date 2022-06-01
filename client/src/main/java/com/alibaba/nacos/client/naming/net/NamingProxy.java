@@ -129,7 +129,9 @@ public class NamingProxy implements Closeable {
                 this.nacosDomain = serverList;
             }
         }
-        this.initRefreshTask();
+        if (StringUtils.isNotEmpty(endpoint)) {
+            this.initRefreshTask();
+        }
     }
     
     private void initRefreshTask() {
